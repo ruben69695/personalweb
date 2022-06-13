@@ -1,0 +1,49 @@
+{% extends "core/base.html" %}
+{% block title %}
+    Experience
+{% endblock title %}
+{% load static %}
+{% block customcss %}
+    {% static 'core/css/experience.css' %}
+{% endblock customcss %}
+{% block content %}
+    <div id="experience" class="container m-5">
+        {% for experience in experiences %}
+            <div class="row d-flex flex-row p-2">
+                <div class="card experience">
+                    <div class="card-header experience-header">
+                        <h5 class="card-title fw-bold">{{ experience.job.position_name }}</h5>
+                        <h6 class="card-subtitle fst-light">{{ experience.job.company }}</h6>
+                    </div>
+                    <div class="card-body experience-body">
+                        <p class="card-text">{{ experience.job.description }}</p>
+                        <p class="card-text">
+                            <small class="text-start">{{ experience.job.from_date }}</small>{% if experience.job.to_date %}<small> - {{ experience.job.to_date }}</small>{% endif %}
+                        </p>
+                    </div>
+                    <div class="card-footer experience-footer">
+                        <small class="text-end">
+                            {% if experience.years > 0 %}
+                                {{ experience.years }}
+                                {% if experience.years == 1 %}
+                                    year
+                                {% else %}
+                                    years
+                                {% endif %}
+                            {% endif %}
+                            {% if experience.months > 0 %}
+                                {{ experience.months }}
+                                {% if experience.months == 1 %}
+                                     month
+                                {% else %}
+                                     months
+                                {% endif %}
+                            {% endif %}
+                        </small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+{% block title %}
+    Contact
+{% endblock title %}
+{% load static %}
+{% block customcss %}{% static 'core/css/contact.css' %}{% endblock customcss %}
+{% block content %}
+    <div class="container m-5">
+        <div class="row mb-2">
+            <div class="col">
+                <h3 id="hi-there-">Contact Me 📭</h3>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col">
+                <p>Do you have any questions or want to work with me? Send me a message and I will contact you</p>
+                <form action="/create-contact-message/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group mb-1">
+                        {% comment %} <label for="nameInput">Nombre</label> {% endcomment %}
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               maxlength="100"
+                               placeholder="Name"/>
+                    </div>
+                    <div class="form-group mb-3">
+                        {% comment %} <label for="nameInput">Correo</label> {% endcomment %}
+                        <input type="email"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="Email"/>
+                        <small id="emailHelp" class="form-text text-white">I'll never share your email with anyone.</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        {% comment %} <label for="messageInput">Message</label> {% endcomment %}
+                        <textarea class="form-control"
+                                  placeholder="Your message"
+                                  id="message"
+                                  name="message"
+                                  rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+.experience {
+    border: none;
+    background: none;
+}
+
+.experience-header {
+    background-color: #0D6EFD;
+}
+
+.experience-body {
+    background-color: #151829;
+}
+
+.experience-footer {
+    background-color: #151829;
+    border: none;
+}

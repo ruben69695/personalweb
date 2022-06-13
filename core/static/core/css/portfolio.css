@@ -1,0 +1,22 @@
+.project {
+    background-color: #16192A;
+    border: none;
+    margin-bottom: 3vh;
+    width: 24rem;
+}
+
+#container {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.card-project-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.pimage {
+	border-radius: 25%;
+}

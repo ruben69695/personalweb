@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+{% block title %}
+    Me
+{% endblock title %}
+{% load static %}
+{% block customcss %}{% static 'core/css/home.css' %}{% endblock customcss %}
+{% block content %}
+    <div class="container m-5">
+        <div class="row mb-2">
+            <div class="col">
+                <h3 id="hi-there-">Hi there 👋</h3>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-md">
+                <p>
+                    🎤 I'm Rubén Arrebola, from Barcelona, Spain. Software developer, focused mainly in backend 🔞🌋 but also interested in frontend development 🌹.
+                </p>
+            </div>
+            <div class="col-lg">
+                <p>
+                    🎨 Passionate about new technologies. A person who thinks about innovating. "I'm a programmer", enjoying developing new things and always trying to do my best for it.
+                </p>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-md">
+                <p>
+                    💻 My code is mainly written in C# and Python but I'm always opened to learn new languages and frameworks to adapt me to the market.
+                </p>
+            </div>
+            <div class="col-lg">
+                <p>🥷🏻 I like to take things to another level and aspire to greatness, never satisfied with simple things.</p>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-md">
+                <p>Here we have some extra information about me:</p>
+                <ul>
+                    <li>🔭 I’m currently studying</li>
+                    <li>🌱 I’m currently improving my knowledge in web development</li>
+                    <li>👯 I’m looking to collaborate with open source projects</li>
+                    <li>📫 How to reach me: SAY MY NAME!!!</li>
+                    <li>💬 Epic phrases: "Don't give up, don't give in. There's always an answer to everything."</li>
+                    <li>⚡ Fun phrase: "Damn, I forgot my cookies in the moon"</li>
+                </ul>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div id="lottie-home"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'core/js/lottie.min.js' %}"></script>
+    <script>
+        var url = "{% static 'core/json/home-lottie.json' %}";
+        var animation = bodymovin.loadAnimation({
+           // animationData: { /* ... */ },
+           container: document.getElementById('lottie-home'), // required
+           path: url, // required
+           renderer: 'svg', // required
+           loop: true, // optional
+           autoplay: true, // optional
+           name: "Home Lottie", // optional
+        });
+    </script>
+{% endblock content %}

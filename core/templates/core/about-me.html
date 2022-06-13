@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+
+{% block title %} About Me {% endblock %}
+
+{% block background %} {% load static %} {% static 'core/img/about-bg.jpg' %} {% endblock %}
+
+{% block headers %}
+<h1>Acerca de</h1>
+<span class="subheading">Biografía</span>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'core/img/avatar.png' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading">¿Quién es este chico?</h2>   
+        <p>
+            Me considero un apasionado de las nuevas tecnologías. Soy una persona que siempre piensa en innovar. 
+            "Soy programador", disfruto desarrollando cosas nuevas y siempre intento dar lo mejor de mi para ello. 
+            Me gusta llevar las cosas a otro nivel y aspiro a lo grande, no me conformo con las cosas sencillas. 
+            Soy una persona abierta y me gusta trabajar en equipo, amo C#, Python y la mentalidad open source.
+            ¿Quieres hacer algo especial o simplemente necesitas ayuda con algo? 
+            <a href="{% url 'contact' %}">¡Ponte en contacto conmigo!</a>
+        </p>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">C#</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">WPF</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Python</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Django</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">VB.NET</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">HTML</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">CSS</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Javascript</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 col-md-4 offset-lg-4">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Java</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

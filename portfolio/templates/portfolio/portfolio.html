@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+{% block title %}
+    Portfolio
+{% endblock title %}
+{% load static %}
+{% block customcss %}
+    {% static 'core/css/portfolio.css' %}
+{% endblock customcss %}
+{% block content %}
+    <div id="container" class="container">
+        <div class="row d-flex flex-row">
+            {% for project in projects %}
+                <div class="col d-flex">
+                    <div class="card project">
+                        <img class="pimage card-img-top p-5"
+                             src="{{ project.image.url }}"
+                             alt="img_{{ project.title }}"
+                             width="auto"
+                             height="auto"/>
+                        <div class="card-body card-project-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description }}</p>
+                            <a href="{{ project.url }}" class="btn btn-primary">View project</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
