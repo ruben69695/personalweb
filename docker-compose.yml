@@ -2,7 +2,7 @@ version: "3.9"
    
 services:
   db:
-    image: postgres
+    image: postgres:14.3-bullseye
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
@@ -14,15 +14,18 @@ services:
   web:
     build: .
     command: > 
-      sh -c "python manage.py migrate &&
+      sh -c "python manage.py collectstatic --noinput &&
+             python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/src
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+      - DEBUG=False
+      - PGSSL=False
+      - SECRET_KEY=${DJANGO_SECRET_KEY}
     depends_on:
       - db
+
