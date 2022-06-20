@@ -13,3 +13,15 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return self.email
+
+class Technology(models.Model):
+    name = models.CharField(max_length=25, verbose_name="Name", primary_key=True)
+    created = models.DateTimeField(auto_now=True, verbose_name="Created date")
+
+    class Meta:
+        verbose_name = "technology"
+        verbose_name_plural = "technologies"
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
