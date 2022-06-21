@@ -1,8 +1,7 @@
 .project {
-    background-color: #16192A;
     border: none;
-    margin-bottom: 3vh;
-    width: 24rem;
+    background: none;
+    background-color: #16192A;
 }
 
 #container {
@@ -10,13 +9,18 @@
     margin-bottom: 5vh;
 }
 
-.card-project-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: column;
-}
-
 .pimage {
 	border-radius: 25%;
+}
+
+.footer {
+	border: none;
+}
+
+.plink {
+	width: 100%;
+}
+
+.tech {
+	color: #0F111D;
 }

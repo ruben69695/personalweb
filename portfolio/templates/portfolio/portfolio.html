@@ -8,20 +8,22 @@
 {% endblock customcss %}
 {% block content %}
     <div id="container" class="container">
-        <div class="row d-flex flex-row">
+        <div class="row">
             {% for project in projects %}
-                <div class="col d-flex">
-                    <div class="card project">
-                        <img class="pimage card-img-top p-5"
-                             src="{{ project.image.url }}"
-                             alt="img_{{ project.title }}"
-                             width="auto"
-                             height="auto"/>
-                        <div class="card-body card-project-body">
-                            <h5 class="card-title">{{ project.title }}</h5>
-                            <p class="card-text">{{ project.description }}</p>
-                            <a href="{{ project.url }}" class="btn btn-primary">View project</a>
+                <div class="col col-project m-3">
+                    <div class="card project h-100">
+						<div class="card-body">
+							<h5 class="card-title">{{ project.title }}</h5>
+							<div class="card-text my-3">
+								{% for tech in project.technologies.all %}
+									<span class="badge tech text-bg-warning">{{ tech.name }}</span>
+								{% endfor %}
+							</div>
+							<p class="card-text">{{ project.description }}</p>
                         </div>
+						<div class="card-footer footer my-3">
+							<a href="{{ project.url }}" class="btn btn-primary plink">View project</a>	
+						</div>
                     </div>
                 </div>
             {% endfor %}
