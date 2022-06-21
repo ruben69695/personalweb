@@ -1,4 +1,5 @@
 from django.db import models
+from core.models import Technology
 
 # Create your models here.
 class Project(models.Model):
@@ -6,6 +7,7 @@ class Project(models.Model):
     description = models.TextField(verbose_name="Descripción")
     image = models.ImageField(verbose_name="Imagen", upload_to="projects")
     url = models.URLField(max_length=200, verbose_name="URL del Proyecto", default="#")
+    technologies = models.ManyToManyField(Technology, verbose_name="Technologies")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")
 
