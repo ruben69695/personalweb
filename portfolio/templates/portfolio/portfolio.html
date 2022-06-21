@@ -8,9 +8,9 @@
 {% endblock customcss %}
 {% block content %}
     <div id="container" class="container">
-        <div class="row">
+        <div class="row row-project">
             {% for project in projects %}
-                <div class="col col-project m-3">
+                <div class="col-sm-3 col-project m-2">
                     <div class="card project h-100">
 						<div class="card-body">
 							<h5 class="card-title">{{ project.title }}</h5>
