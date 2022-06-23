@@ -12,4 +12,5 @@ class EmailService():
     
     def send(self):
         emailBackend = mail.get_connection()
-        send_mail(self.subject, self.message, self.fromMail, self.recipient_list, False, connection=emailBackend)
+        result = send_mail(self.subject, self.message, self.fromMail, self.recipient_list, False, connection=emailBackend)
+        self.sended = result == 1

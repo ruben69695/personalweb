@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from .forms import ContactMessageForm
 from .services.emailService import EmailService
+from django.conf import settings
 
 # Create your views here.
 def home(request):
@@ -17,8 +18,9 @@ def createContactMessage(request):
         form = ContactMessageForm(request.POST)
         if form.is_valid():
             new_message = form.save()
-            subject = new_message.name + ' needs your attention'
-            service = EmailService(new_message.email, ['ruben.arre6@gmail.com'], subject, new_message.message)
+            fromEmail = settings.DEFAULT_FROM_EMAIL
+            subject = new_message.name + ', with email (' + new_message.email + ') needs your attention'
+            service = EmailService(fromEmail, [fromEmail], subject, new_message.message)
             service.send()
             
             if service.sended:
