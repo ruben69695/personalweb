@@ -1,17 +1,14 @@
 body {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   background-color: #0F111D;
 }
 
 html {
-  height: -webkit-fill-available;
+  height: 100%;
 }
 
 main {
   height: 100vh;
-  height: -webkit-fill-available;
-  max-height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
   align-items: stretch;
@@ -29,18 +26,13 @@ main {
   flex-direction: column;
 }
 
-/* .sidebar-container-child {
-  align-self: center;
-} */
-
 .content {
   flex-grow: 1;
   display: flex;
-  align-items: safe center;
   overflow: auto;
-  align-content: center;
-  min-height: 150px;
-  justify-content: safe center;
+  padding: 5vh 0;
+  height: 100vh;
+  justify-content: center;
 }
 
 .content-first-child {
