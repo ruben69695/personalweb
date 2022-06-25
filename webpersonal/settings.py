@@ -139,3 +139,8 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', None)
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', None)
 EMAIL_USE_TLS = False if os.environ.get('EMAIL_USE_TLS', 'False') == 'False' else True
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', None)
+
+# Telegram
+TG_ACTIVE = False if os.environ.get('TG_ACTIVE', 'False') == 'False' else True
+TG_TOKEN = os.environ.get('TG_TOKEN', None)
+TG_CHAT_ID = int(os.environ.get('TG_CHAT_ID', 0))

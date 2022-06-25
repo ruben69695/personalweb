@@ -32,6 +32,9 @@ services:
       - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
       - EMAIL_USE_TLS=${EMAIL_USE_TLS}
       - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL}
+      - TG_ACTIVE=${TG_ACTIVE}
+      - TG_TOKEN=${TG_TOKEN}
+      - TG_CHAT_ID=${TG_CHAT_ID}
     depends_on:
       - db
 
