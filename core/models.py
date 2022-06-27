@@ -25,3 +25,15 @@ class Technology(models.Model):
 
     def __str__(self):
         return self.name
+
+class BlacklistedWord(models.Model):
+    word = models.CharField(max_length=30, verbose_name="Word", primary_key=True)
+    created = models.DateTimeField(auto_now=True, verbose_name="Created date")
+
+    class Meta:
+        verbose_name = "blacklisted word"
+        verbose_name_plural ="blacklisted words"
+        ordering = ["word"]
+
+    def __str__(self):
+        return self.word
