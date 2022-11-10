@@ -31,6 +31,8 @@ DEBUG = True if os.environ.get('DEBUG', 'True') == 'True' else False
 
 ALLOWED_HOSTS = [] if os.environ.get('DEBUG', 'True') == 'True' else ['*']
 
+CSRF_TRUSTED_ORIGINS = [] if DEBUG else ['https://rarrebola-personalweb-ny2i4.ondigitalocean.app', 'https://www.rubenarrebola.pro']
+
 
 # Application definition
 

@@ -1,7 +1,9 @@
 # Personal Web
-My personal and professional web made with Python and Django.
+My personal and professional web made with Python, Django, PostgreSQL and deployed on Digital Ocean cloud platform in a PaaS.
 
-![Heroku](https://heroku-badge.herokuapp.com/?app=rarrebola-personalweb)
+Take a look at my page on [rubenarrebola.pro](https://www.rubenarrebola.pro) 😎
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=e212aaa8b0c3&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 ## Requirements
 1. Docker and Docker Compose installed on your machine
@@ -43,6 +45,7 @@ docker compose up --build -d
 
 ## Production Deployment
 - Heroku Platform
+- Digital Ocean
 
 ## Runs on
 - Linux
