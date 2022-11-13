@@ -15,5 +15,5 @@ jobs:
           username: ruben69695
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          repository: ruben69695/publish-packages/personalweb
+          repository: ruben69695/publish-packages/personal-web
           tag_with_sha: false
