@@ -1,3 +1,4 @@
+[![Publish to Docker](https://github.com/ruben69695/personalweb/actions/workflows/deploy.yml/badge.svg)](https://github.com/ruben69695/personalweb/actions/workflows/deploy.yml)
 ![GitHub](https://img.shields.io/github/license/ruben69695/personalweb?color=purple)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ruben69695/personalweb)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/ruben69695/personalweb?color=purple)
