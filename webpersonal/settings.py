@@ -33,6 +33,48 @@ ALLOWED_HOSTS = [] if os.environ.get('DEBUG', 'True') == 'True' else ['*']
 
 CSRF_TRUSTED_ORIGINS = [] if DEBUG else ['https://rarrebola-personalweb-ny2i4.ondigitalocean.app', 'https://www.rubenarrebola.pro']
 
+# Logging part
+LOG_LEVEL = os.getenv('DJANGO_LOG_LEVEL', 'INFO')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '[{levelname}] {module} {process:d} {thread:d} :: {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '[{levelname}] :: {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': LOG_LEVEL,
+        },
+        'core': {
+            'handlers': ['console'],
+            'level': LOG_LEVEL,
+        },
+        'portfolio': {
+            'handlers': ['console'],
+            'level': LOG_LEVEL,
+        },
+        'experience': {
+            'handlers': ['console'],
+            'level': LOG_LEVEL,
+        }
+    },
+}
+
 
 # Application definition
 
@@ -136,7 +178,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' if DEBUG else 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST', None)
-EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '0'))
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 0))
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', None)
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', None)
 EMAIL_USE_TLS = False if os.environ.get('EMAIL_USE_TLS', 'False') == 'False' else True

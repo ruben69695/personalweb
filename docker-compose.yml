@@ -26,6 +26,7 @@ services:
       - DEBUG=True
       - PGSSL=False
       - SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DJANGO_LOG_LEVEL=${DJANGO_LOG_LEVEL}
       - EMAIL_HOST=${EMAIL_HOST}
       - EMAIL_PORT=${EMAIL_PORT}
       - EMAIL_HOST_USER=${EMAIL_HOST_USER}
