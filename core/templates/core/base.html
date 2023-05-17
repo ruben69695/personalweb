@@ -17,6 +17,7 @@
   <link href="{% static 'core/vendor/bootstrap/font/bootstrap-icons.css' %}" rel="stylesheet" />
   <link href="{% static 'core/css/sidebars.css' %}"
     href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+  <link href="{% static 'core/css/base.css' %}" rel="stylesheet" type="text/css" />
   <link href="{% block customcss %}{% endblock customcss %}" rel="stylesheet" />
   <link
     href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
@@ -26,8 +27,8 @@
 
 <body>
 
-  <main>
-    <div class="text-white sidebar-container">
+  <main class="containerFlex">
+    <div id="menu" class="text-white menuColumn">
       <div class="text-center">
         <div class="text-center mb-2">
           <img src="https://github.com/ruben69695.png" alt="mypicture" width="150" height="150"
@@ -60,45 +61,45 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="mx-4 mt-4">
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a {% if request.path == '/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} aria-current="page" href="{% url 'home' %}">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#person" />
-              </svg>
-              Me
-            </a>
-          </li>
-          <li>
-            <a {% if request.path == '/portfolio/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} href="{% url 'portfolio' %}">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#code-slash" />
-              </svg>
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a  {% if request.path == '/experience/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} href="{% url 'experience' %}">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#briefcase" />
-              </svg>
-              Experience
-            </a>
-          </li>
-          <li>
-            <a {% if request.path == '/contact/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} href="{% url 'contact' %}">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#telephone" />
-              </svg>
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
+        </div>
+        <div class="mx-4 mt-4">
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a {% if request.path == '/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} aria-current="page" href="{% url 'home' %}">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                  <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#person" />
+                </svg>
+                Me
+              </a>
+            </li>
+            <li>
+              <a {% if request.path == '/portfolio/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} href="{% url 'portfolio' %}">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                  <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#code-slash" />
+                </svg>
+                Portfolio
+              </a>
+            </li>
+            <li>
+              <a  {% if request.path == '/experience/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} href="{% url 'experience' %}">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                  <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#briefcase" />
+                </svg>
+                Experience
+              </a>
+            </li>
+            <li>
+              <a {% if request.path == '/contact/' %} class="nav-link active" {% else %} class="nav-link text-white" {% endif %} href="{% url 'contact' %}">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                  <use xlink:href="{% static 'core/vendor/bootstrap/icons/bootstrap-icons.svg' %}#telephone" />
+                </svg>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
     </div>
-    <div class="text-white content">
+    <div class="text-white contentColumn">
       {% block content %}{% endblock content %}
     </div>
   </main>
@@ -106,6 +107,7 @@
   <!-- Bootstrap y Javascripts -->
   <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'core/js/sidebars.js' %}"></script>
+  <script src="{% static 'core/js/base.js' %}"></script>
 </body>
 
 </html>

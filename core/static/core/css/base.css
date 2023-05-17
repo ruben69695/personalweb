@@ -1,0 +1,28 @@
+.containerFlex {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.contentColumn {
+    width: auto;
+}
+
+.menuColumn {
+    width: 40vh;
+    background-color: #16192A;
+}
+
+@media screen and (max-width: 876px) {
+    .containerFlex {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .menuColumn {
+        width: auto;
+    }
+
+    main {
+        height: auto;
+    }
+}
